@@ -35,10 +35,13 @@
 
 /* right */
 .loginBox {
-  height: 400px;
+  height: 450px;
   padding: 20px;
   background-color: white;
   border-radius: 10px;
+}
+
+.loginBoxForm {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -83,21 +86,12 @@
   box-shadow: none;
 }
 
-.loginForgot {
-  text-align: center;
-  color: #41428b;
-  margin: 10px 0;
-  cursor: pointer;
-}
-
 .loginRegisterButton {
   width: 60%;
   height: 50px;
-  align-self: center;
   border-radius: 10px;
   border: none;
   background-color: #3c8b50;
-  color: white;
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
@@ -105,6 +99,11 @@
   box-shadow: 5px 10px 30px -5px #b6bbcf;
   border-radius: 10px;
   transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-decoration: none;
 }
 
 .loginRegisterButton:hover {

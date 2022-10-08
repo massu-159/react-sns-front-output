@@ -1,23 +1,31 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Post from '../post/Post';
 import Share from '../share/Share';
 import "./TimeLine.css";
-// import { Posts } from "../../dummyData";
 import axios from "axios";
+import { AuthContext } from '../../state/AuthContext';
 
 export default function TimeLine({username}) {
   const [posts, setPosts] = useState([]);
 
+  const { user } = useContext(AuthContext);
+
   useEffect(() => {
     const fetchPosts = async () => {
+      // 表示の切り替え
       const response = username
-        ? await axios.get(`/posts/profile/${username}`)
-        : await axios.get("/posts/timeline/633e7f3646430e065a26f3a0");
-      console.log(response);
-      setPosts(response.data);
+        ? await axios.get(`/posts/profile/${username}`) //プロフィールの場合
+        : await axios.get(`/posts/timeline/${user._id}`); //ホームの場合
+      
+      // 投稿時間順に並び替え
+      const sortPosts = response.data.sort((post1, post2) => {
+        return new Date(post2.createdAt) - new Date(post1.createdAt);
+      });
+      
+      setPosts(sortPosts);
     }
     fetchPosts();
-  }, [username]);
+  }, [username, user._id]);
 
   return (
     <div className="timeline">

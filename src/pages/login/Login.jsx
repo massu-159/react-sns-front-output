@@ -1,4 +1,5 @@
 import React, { useContext, useRef } from 'react'
+import { Link } from 'react-router-dom';
 import { loginCall } from '../../actionCalls';
 import { AuthContext } from '../../state/AuthContext';
 import "./Login.css";
@@ -17,7 +18,6 @@ export default function Login() {
     }, dispatch);
   };
 
-  console.log(user);
   return (
     <div className='login'>
       <div className="loginWrapper">
@@ -26,14 +26,18 @@ export default function Login() {
           <span className='loginDesc'>本格的なSNSを、自分の手で。</span>
         </div>
         <div className="loginRight">
-          <form className="loginBox" onSubmit={(e) => handleSubmit(e)}>
-            <p className="loginMsg">ログインはこちら</p>
-            <input type="email" className="loginInput" placeholder='Eメール' required ref={email}/>
-            <input type="password" className="loginInput" placeholder='パスワード' required minLength="6" ref={password} />
-            <button className="loginButton">ログイン</button>
+          <div className="loginBox">
+            <form className='loginBoxForm' onSubmit={(e) => handleSubmit(e)} >
+              <p className="loginMsg">ログインはこちら</p>
+              <input type="email" className="loginInput" placeholder='Eメール' required ref={email}/>
+              <input type="password" className="loginInput" placeholder='パスワード' required minLength="6" ref={password} />
+              <button className="loginButton">ログイン</button>
+            </form>
             <span className="loginForgot">パスワードを忘れた方へ</span>
-            <button className="loginRegisterButton">アカウント作成</button>
-          </form>
+              <Link className="loginRegisterButton" to="/register">
+                アカウント作成
+              </Link>
+          </div>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import "./Register.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Register() {
   const username = useRef();
@@ -43,15 +43,19 @@ export default function Register() {
           <span className='loginDesc'>本格的なSNSを、自分の手で。</span>
         </div>
         <div className="loginRight">
-          <form className="loginBox" onSubmit={(e)=>handleSubmit(e)}>
-            <p className="loginMsg">新規登録はこちら</p>
-            <input type="text" className="loginInput" placeholder='ユーザー名' required ref={username}/>
-            <input type="email" className="loginInput" placeholder='Eメール' required ref={email}/>
-            <input type="password" className="loginInput" placeholder='パスワード' required minLength="6" ref={password}/>
-            <input type="password" className="loginInput" placeholder='確認用パスワード' required minLength="6" ref={passwordConfirmation}/>
-            <button className="loginButton" type='submit'>サインアップ</button>
-            <button className="loginRegisterButton">ログイン</button>
-          </form>
+          <div className="loginBox" >
+            <form className='loginBoxForm' onSubmit={(e) => handleSubmit(e)}>
+              <p className="loginMsg">新規登録はこちら</p>
+              <input type="text" className="loginInput" placeholder='ユーザー名' required ref={username}/>
+              <input type="email" className="loginInput" placeholder='Eメール' required ref={email}/>
+              <input type="password" className="loginInput" placeholder='パスワード' required minLength="6" ref={password}/>
+              <input type="password" className="loginInput" placeholder='確認用パスワード' required minLength="6" ref={passwordConfirmation}/>
+              <button className="loginButton" type='submit'>サインアップ</button>
+            </form>
+            <Link className="loginRegisterButton" to="/login">
+                ログイン
+            </Link>
+          </div>
         </div>
       </div>
     </div>
