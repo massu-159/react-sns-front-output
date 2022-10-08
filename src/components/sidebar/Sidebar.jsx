@@ -3,16 +3,19 @@ import React from 'react'
 import CloseFriend from '../closefriend/CloseFriend';
 import "./Sidebar.css";
 import { Users } from '../../dummyData';
+import { Link } from 'react-router-dom';
 
 export default function Sidebar() {
   return (
     <div className='sidebar'>
       <div className="sidebarWrapper">
         <ul className="sidebarList">
-          <li className="sidebarListItem">
-            <Home className="sidebarIcon"></Home>
-            <span className="sidebarListItemText">ホーム</span>
-          </li>
+          <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+            <li className="sidebarListItem">
+              <Home className="sidebarIcon"></Home>
+                <span className="sidebarListItemText">ホーム</span>
+            </li>
+          </Link>
           <li className="sidebarListItem">
             <Search className="sidebarIcon"></Search>
             <span className="sidebarListItemText">検索</span>
@@ -29,10 +32,12 @@ export default function Sidebar() {
             <Bookmark className="sidebarIcon"></Bookmark>
             <span className="sidebarListItemText">ブックマーク</span>
           </li>
-          <li className="sidebarListItem">
-            <Person className="sidebarIcon"></Person>
-            <span className="sidebarListItemText">プロフィール</span>
-          </li>
+          <Link to={"/profile/massu"} style={{ textDecoration: "none", color: "black" }}>
+            <li className="sidebarListItem">
+              <Person className="sidebarIcon"></Person>
+                <span className="sidebarListItemText">プロフィール</span>
+            </li>
+          </Link>
           <li className="sidebarListItem">
             <Settings className="sidebarIcon"></Settings>
             <span className="sidebarListItemText">設定</span>
