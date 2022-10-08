@@ -3,7 +3,7 @@
 }
 
 .profileRight {
-  flex: 10.5;
+  flex: 9.5;
 }
 
 .profileCover {
@@ -25,7 +25,7 @@
   top: 150px;
   width: 150px;
   height: 150px;
-  background-repeat: 50%;
+  border-radius: 50%;
   object-fit: cover;
 }
 
