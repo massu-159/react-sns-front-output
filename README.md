@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# react-sns-front-output
+アウトプットとして、SNSアプリケーションを作成。
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+フロントはreact
 
-## Available Scripts
+サーバーサイドはNode.js(express)
 
-In the project directory, you can run:
+DBはMongoDB
 
-### `npm start`
+FaceBook風。
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+urlはこちら
+https://github.com/massu-159/react-sns-front-output
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 目次
+1. 環境構築
+2. アプリケーションの仕様
+3. 環境変数
 
-### `npm run build`
+## 1. 環境構築
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1-1. ライブラリ インストール
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+または
 
-### `npm run eject`
+yarn
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 1-2. アプリケーション実行
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+npm run dev
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+または
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+yarn dev
+```
 
-## Learn More
+## 2. アプリケーションの仕様
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 2-1. 仕様
+- sns記事投稿
+  - sns記事一覧表示
+  - sns記事タイムライン表示
+  - sns記事新規投稿処理
+  - sns記事いいね処理
+- フォロー
+  - フォロー(アンフォロー)
+- 認証
+  - 会員登録
+  - ログイン(ログアウト)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### 2-2. 構成技術
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 環境変数
+[react-sns-front-output](https://github.com/massu-159/react-sns-front-output)側で
 
-### Analyzing the Bundle Size
+.envを作成し、環境変数を設定。
+```
+REACT_APP_PUBLIC_FOLDER=xxxxxxxxxxx
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+[react-sns-back-output](https://github.com/massu-159/react-sns-back-output)側で
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+.envを作成し、環境変数を設定。
+```
+MONGOURL=xxxxxxxxxx
+```
